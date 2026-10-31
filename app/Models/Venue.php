@@ -6,5 +6,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class Venue extends Model
 {
-    //
+    protected $guarded = [];
+
+    public function events()
+    {
+        return $this->hasMany(Event::class);
+    }
+
+    public function notes()
+    {
+        return $this->morphMany(Note::class, 'notable');
+    }
 }
