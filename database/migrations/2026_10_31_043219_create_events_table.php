@@ -11,13 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-    Schema::create('events', function (Blueprint $table) {
-    $table->id();
-    $table->foreignId('venue_id')->constrained()->restrictOnDelete();
-    $table->string('title');
-    $table->dateTime('starts_at');
-    $table->timestamps();
-});
+        Schema::create('events', function (Blueprint $table) {
+            $table->id();
+            $table->foreignId('venue_id')->constrained()->restrictOnDelete();
+            $table->string('title');
+            $table->dateTime('starts_at');
+            $table->timestamps();
+        });
     }
 
     /**
